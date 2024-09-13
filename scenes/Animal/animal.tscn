@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjnf7fw7xmp44"]
+
+[ext_resource type="Script" path="res://scenes/Animal/animal.gd" id="1_13l16"]
+[ext_resource type="Texture2D" uid="uid://j80y8ly7fqrv" path="res://assets/player/parrot.png" id="1_p7o6o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfyh3"]
+radius = 126.667
+
+[node name="Animal" type="RigidBody2D"]
+input_pickable = true
+freeze = true
+script = ExtResource("1_13l16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_p7o6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.15, 0.15)
+shape = SubResource("CircleShape2D_cfyh3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, 0.500002)
+scale = Vector2(2.15, 1.95)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
