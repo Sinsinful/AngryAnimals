@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh8e8egwcd7qh"]
+
+[ext_resource type="Texture2D" uid="uid://gqo8yhfvltps" path="res://assets/env/elementStone025.png" id="1_io5ps"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_io5ps")
